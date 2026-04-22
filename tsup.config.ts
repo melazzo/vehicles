@@ -13,7 +13,7 @@ export default defineConfig({
   splitting: false,
   treeshake: true,
   target: "es2022",
-  external: ["react", "react-dom", "tailwindcss"],
+  external: ["react", "react-dom", "react-router-dom", "tailwindcss"],
   // Expose src/styles.css directly so consumers can `import "@melazzo/vehicles/styles.css"`
   loader: {
     ".css": "copy",
