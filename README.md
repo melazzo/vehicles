@@ -2,7 +2,7 @@
 
 Base compartilhada (tema, tokens, componentes e utilitários de domínio) para as plataformas de **revenda de veículos** da Melazzo Consultoria: Car With, Duo Motors, Tayco Motors e futuros clientes do mesmo vertical.
 
-> Este pacote é interno e privado. Distribuído via git+https — não publicado no npm registry.
+> Infraestrutura compartilhada de código (plumbing) — NavLink compat wrapper, helper `cn`, tokens de design. Repo público para destravar builds em qualquer ambiente (Lovable, CI, local). A lógica de negócio e os dados de cada plataforma (Car With, Duo Motors, Tayco Motors) ficam nos respectivos repositórios privados. Distribuído via git+https; pode migrar para o npm registry posteriormente.
 
 ## Verticais da Melazzo
 
