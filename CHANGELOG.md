@@ -4,6 +4,23 @@ Todas as mudanças notáveis neste pacote são registradas aqui. Formato baseado
 [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento conforme
 [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.2.1] — 2026-04-23
+
+### Corrigido
+- Adicionado script `"prepare": "[ -d dist ] || tsup"` ao `package.json` — consumidores
+  instalando via `npm install github:melazzo/vehicles#v0.2.1` agora têm `dist/` buildado
+  automaticamente durante o install. A v0.2.0 publicou `dist/` como release assets mas
+  não tinha o hook `prepare`, impedindo consumo via git+https.
+- Expandido campo `files` em `package.json` para incluir `src/`, `tsconfig.json` e
+  `tsup.config.ts` — necessário para que o `prepare` consiga rebuildar no consumidor
+  quando `dist/` não está presente.
+- Bump de `VERSION` em `src/index.ts` para `"0.2.1"`.
+
+### Observações / Não-regressão
+- Release puramente operacional: nenhum símbolo público novo, removido ou alterado
+  em relação à v0.2.0. Plataformas que consumirem direto a v0.2.0 via release assets
+  (download manual do `dist/`) continuam funcionais sem mudança.
+
 ## [0.2.0] — 2026-04-22
 
 ### Adicionado
