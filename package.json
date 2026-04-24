@@ -1,6 +1,6 @@
 {
   "name": "@melazzo/vehicles",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Base package compartilhada pelas plataformas de revenda de veículos da Melazzo Consultoria (Car With, Duo Motors, Tayco Motors).",
   "license": "UNLICENSED",
   "private": false,
@@ -47,8 +47,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist",
-    "prepare": "[ -d dist ] || tsup"
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "clsx": "^2.1.1",

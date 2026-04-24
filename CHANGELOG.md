@@ -4,6 +4,17 @@ Todas as mudanças notáveis neste pacote são registradas aqui. Formato baseado
 [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento conforme
 [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.2.2] — 2026-04-24
+
+### Corrigido
+- `dist/` agora é commitado no repositório. Removido o script `"prepare": "[ -d dist ] || tsup"` do `package.json`, que falhava silenciosamente em consumidores que usam `bun` (o Lovable do Duo Motors), pois o bun não instala `devDependencies` para dependências git e o `tsup` (devDep) ficava ausente durante o install.
+- Removida linha `dist/` do `.gitignore` — dist/ passa a ser versionado.
+- Bump de `VERSION` em `src/index.ts` para `"0.2.2"`.
+
+### Observações / Não-regressão
+- Release puramente operacional: nenhum símbolo público novo, removido ou alterado em relação à v0.2.1. Consumidores que estavam usando v0.2.1 com `npm` (Car With) continuam funcionando sem mudança; v0.2.2 é drop-in replacement e adicionalmente resolve o consumo via `bun`.
+- Dist/ foi pré-construído manualmente e validado com stubs ESM + CJS (`clsx`, `tailwind-merge`, `react`, `react-dom`, `react-router-dom`, `react/jsx-runtime`) antes do commit — equivalente ao que `tsup` produziria.
+
 ## [0.2.1] — 2026-04-23
 
 ### Corrigido
